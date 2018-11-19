@@ -20,9 +20,12 @@
 ``` GRANT ALL PRIVILEGES ON *.* TO'root'@'%' IDENTIFIED BY '允许远程连接的password' WITH GRANT OPTION; TION; ```
 
 ## db frist
+
 //for sqlserver
+
 1. Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 //for mysql
-2.Scaffold-DbContext "Server=xx;Database=db_naem;User=root;Password=xx;" "Pomelo.EntityFrameworkCore.MySql" -OutputDir dir
+
+2. Scaffold-DbContext "Server=xx;Database=db_naem;User=root;Password=xx;" "Pomelo.EntityFrameworkCore.MySql" -OutputDir dir
 
