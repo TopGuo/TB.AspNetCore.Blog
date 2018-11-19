@@ -15,6 +15,14 @@
 1. Add-Migration Xxx //生成迁移的类
 2. Script-Migration //生成迁移的sql脚本--这步可省略
 3. Update-Database -Verbose //迁移到书库
-### 在执行3的时候，可能出现mysql 1045 access defined 拒绝远程连接的问题
-1. 登录你的服务器，进入mysql 授权，命令如下：``` GRANT ALL PRIVILEGES ON *.* TO'root'@'%' IDENTIFIED BY '允许远程连接的password' WITH GRANT OPTION; TION; ```
+## 在执行3的时候，可能出现mysql 1045 access defined 拒绝远程连接的问题
+1. 登录你的服务器，进入mysql 授权，命令如下：
+``` GRANT ALL PRIVILEGES ON *.* TO'root'@'%' IDENTIFIED BY '允许远程连接的password' WITH GRANT OPTION; TION; ```
+
+## db frist
+//for sqlserver
+1. Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+//for mysql
+2.Scaffold-DbContext "Server=xx;Database=db_naem;User=root;Password=xx;" "Pomelo.EntityFrameworkCore.MySql" -OutputDir dir
 
